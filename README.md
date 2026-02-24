@@ -1,3 +1,12 @@
+Diferença
+Registros
+
+subsea_time_cost_system/README.md
+subsea_time_cost_system/README.md
+Novo
++107
+-0
+
 # Subsea ROV Inspection Time & Cost Optimization System (MVP)
 
 Production-style portfolio project that simulates subsea ROV inspection missions and applies machine learning to predict:
@@ -11,6 +20,7 @@ It combines simplified offshore engineering physics with an ML forecasting layer
 
 ```text
 subsea_time_cost_system/
+├── __init__.py
 ├── app.py
 ├── data_simulation.py
 ├── train_models.py
@@ -48,31 +58,30 @@ Cost model:
 ## Setup
 
 ```bash
-cd subsea_time_cost_system
 python -m venv .venv
 source .venv/bin/activate  # Linux/macOS
-pip install -r requirements.txt
+pip install -r subsea_time_cost_system/requirements.txt
 ```
 
 ## Generate Data
 
 ```bash
-python data_simulation.py
+python -m subsea_time_cost_system.data_simulation
 ```
 
-This creates `missions.csv` with 4000 synthetic missions.
+This creates `subsea_time_cost_system/missions.csv` with 4000 synthetic missions.
 
 ## Train Models
 
 ```bash
-python train_models.py
+python -m subsea_time_cost_system.train_models
 ```
 
 Outputs:
 
-- `models/time_model.pkl`
-- `models/cost_model.pkl`
-- `models/scaler.pkl`
+- `subsea_time_cost_system/models/time_model.pkl`
+- `subsea_time_cost_system/models/cost_model.pkl`
+- `subsea_time_cost_system/models/scaler.pkl`
 
 Training uses:
 
@@ -85,7 +94,7 @@ Training uses:
 ## Run Dashboard
 
 ```bash
-streamlit run app.py
+streamlit run subsea_time_cost_system/app.py
 ```
 
 Sidebar controls let users configure mission conditions and operational economics.
@@ -105,3 +114,5 @@ The dashboard also provides a Plotly sensitivity chart showing how **current spe
 - Route segmentation and variable current profiles
 - Constraint-based optimization for vessel and ROV scheduling
 - Scenario comparison and report export
+subsea_time_cost_system/__init__.py
+subsea_time_cost_system/__init__.py
